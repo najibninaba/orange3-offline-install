@@ -29,7 +29,10 @@ def generate_dest_path(url, parent_dir='.'):
     dest = parent_dir + '/' + '/'.join(li)
     return dest
 
-def download_file(source, destination, mode='wb'):
+def download_file(source, destination, mode='wb', overwrite=False):
+    if os.path.exists(destination):
+        return
+    
     response = requests.get(source, stream=True)
     with open(destination, mode) as f:
         for chunk in response.iter_content(chunk_size=512):
