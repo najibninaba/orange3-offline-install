@@ -6,6 +6,36 @@ if ($ProcessError) {
 }
 $AnacondaPath = Split-Path $CondaPath
 
+$DirExists = Test-Path "./Packages/noarch"
+If ($DirExists -eq $False) {
+    Write-Host "Packages directory not prepared. Please run the prepare.bat script."
+    Exit
+}
+
+$DirExists = Test-Path "./Packages/win-32"
+If ($DirExists -eq $False) {
+    Write-Host "Packages directory not prepared. Please run the prepare.bat script."
+    Exit
+}
+
+$DirExists = Test-Path "./Packages/win-64"
+If ($DirExists -eq $False) {
+    Write-Host "Packages directory not prepared. Please run the prepare.bat script."
+    Exit
+}
+
+$DirExists = Test-Path "./nltk_data"
+If ($DirExists -eq $False) {
+    Write-Host "nltk_data directory not prepared. Please run the prepare.bat script."
+    Exit
+}
+
+$IconFileExists = Test-Path "./orange.ico"
+If ($IconFileExists -eq $False) {
+    Write-Host "Orange icon not found. Please run the prepare.bat script."
+    Exit
+}
+
 $AnacondaShareDir = $AnacondaPath + "\share\orange3"
 $DirExists = Test-Path $AnacondaShareDir
 If ($DirExists -eq $False) {
