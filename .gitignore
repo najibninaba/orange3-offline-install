@@ -1,6 +1,7 @@
 .vscode
 .vagrant/
 __pycache__/
+Vagrantfile
 *.pyc
 *.box
 Deps
