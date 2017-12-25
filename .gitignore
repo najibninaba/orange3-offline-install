@@ -1,7 +1,10 @@
 .vscode
 .vagrant/
+__pycache__/
+*.pyc
 *.box
 Deps
+t
 Packages
 nltk_data
 Anaconda3*exe
