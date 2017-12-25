@@ -10,7 +10,7 @@ This is a two-phased deployment. For the first phase, we require a machine that 
 
 ## Pre-requisites:
 
-We require [Anaconda3](https://www.anaconda.com/distribution/)) to be installed on both the staging environment and the target environment.
+We require [Anaconda3](https://www.anaconda.com/distribution/) to be installed on both the staging environment and the target environment.
 
 # Instructions
 
