@@ -1,14 +1,16 @@
 # Orange3 Offline Installation scripts
 
-The motivation for these scripts was to address a common customer request for an offline installation of Orange3 Data Mining software along with the Orange3 Text Addon and the Orange3 Time Series Addon due to their air-gapped (no Internet access) environments. In order to do this, we still require a staging environment that is connected to the internet to download all the necessary packages and dependencies (via the prepare.bat script) and copy these supporting artifacts over to the target air-gapped environment(s) and running the deploy.bat script.
+The motivation for these scripts was to address a common customer request for an offline installation of [Orange3](https://orange.biolab.si/), the Open Source machine learning and visualization tool along with their Orange3 Text Addon and the Orange3 Time Series Addon.
+
+In order to do this, we still require a staging environment that is connected to the internet to download all the necessary packages and dependencies (via the prepare.bat script) and copy these supporting artifacts over to the target air-gapped environment(s) and running the deploy.bat script.
 
 # Instructions
 
-This is a two-phased deployment. For the first phase, we require a machine that has Internet access. Currently these scripts are only tested on a Windows 10 x64 machine.
+This is a two-phased deployment. For the first phase, we require a machine that has Internet access. For the second phase, the target environment does not need Internet access at all. Currently these scripts are only tested on Windows 10 x64 environments.
 
 ## Pre-requisites:
 
-We require Anaconda3 be installed on both the staging environment and the target environment.
+We require [Anaconda3](https://www.anaconda.com/distribution/)) to be installed on both the staging environment and the target environment.
 
 # Instructions
 
