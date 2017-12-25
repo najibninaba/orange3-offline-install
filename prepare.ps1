@@ -10,3 +10,10 @@ if ($ProcessError) {
 }
 
 python .\prepare.py --rootdir $rootdir
+
+Write-Host "Creating Conda Indexes.."
+conda index "$rootdir\Packages\noarch"
+conda index "$rootdir\Packages\win-32"
+conda index "$rootdir\Packages\win-64"
+
+Write-Host "All done. Now run the deploy.bat script to offline install Orange3 and its add-ons."

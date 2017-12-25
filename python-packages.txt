@@ -1,7 +1,6 @@
 https://anaconda.org/conda-forge/oauthlib/2.0.6/download/noarch/oauthlib-2.0.6-py_0.tar.bz2
 https://anaconda.org/conda-forge/pyjwt/1.5.3/download/noarch/pyjwt-1.5.3-py_0.tar.bz2
-https://anaconda.org/conda-forge/oauthlib/2.0.6/download/noarch/oauthlib-2.0.6-py_0.tar.bz2
-https://anaconda.org/conda-forge/pyjwt/1.5.3/download/noarch/pyjwt-1.5.3-py_0.tar.bz2
+https://anaconda.org/conda-forge/serverfiles/0.2.1/download/noarch/serverfiles-0.2.1-py_0.tar.bz2
 https://anaconda.org/anaconda/anaconda/5.0.1/download/win-32/anaconda-5.0.1-py36h2419598_2.tar.bz2
 https://anaconda.org/conda-forge/anyqt/0.0.8/download/win-32/anyqt-0.0.8-py36_1.tar.bz2
 https://anaconda.org/conda-forge/biopython/1.70/download/win-32/biopython-1.70-py36_2.tar.bz2
@@ -15,7 +14,7 @@ https://anaconda.org/conda-forge/dill/0.2.6/download/win-32/dill-0.2.6-py36_0.ta
 https://anaconda.org/conda-forge/docx2txt/0.6/download/win-32/docx2txt-0.6-py36_0.tar.bz2
 https://anaconda.org/conda-forge/freetype/2.8.1/download/win-32/freetype-2.8.1-vc14_0.tar.bz2
 https://anaconda.org/conda-forge/future/0.16.0/download/win-32/future-0.16.0-py36_0.tar.bz2
-https://anaconda.org/conda-forge/gensim/3.2.0/download/win-32/gensim-3.2.0-py36_vc14_0.tar.bz2
+https://anaconda.org/conda-forge/gensim/3.2.0/download/win-64/gensim-3.2.0-py36_vc14_0.tar.bz2
 https://anaconda.org/conda-forge/hdf5/1.10.1/download/win-32/hdf5-1.10.1-vc14_1.tar.bz2
 https://anaconda.org/conda-forge/icu/58.2/download/win-32/icu-58.2-vc14_0.tar.bz2
 https://anaconda.org/conda-forge/joblib/0.11/download/win-32/joblib-0.11-py36_0.tar.bz2
