@@ -4,6 +4,10 @@ The motivation for these scripts was to address a common customer request for an
 
 In order to do this, we still require a staging environment that is connected to the internet to download all the necessary packages and dependencies (via the prepare.bat script) and copy these supporting artifacts over to the target air-gapped environment(s) and running the deploy.bat script.
 
+<aside class="warning">
+WARNING!! The PowerShell scripts are called with the Execution Policy set to Bypass. Run them at your own risk only after you have understand what the code in the scripts do.
+</aside>
+
 # Instructions
 
 This is a two-phased deployment. For the first phase, we require a machine that has Internet access. For the second phase, the target environment does not need Internet access at all. Currently these scripts are only tested on Windows 10 x64 environments.

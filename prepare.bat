@@ -1,2 +1,2 @@
 @echo off
-powershell -c ".\prepare.ps1 %*"
+powershell -ExecutionPolicy Bypass -File prepare.ps1  %*
