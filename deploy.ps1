@@ -1,3 +1,5 @@
+Start-Transcript -OutputDirectory "$pwd\logs"
+
 "Getting path of Anaconda3"
 $CondaPath = Get-Command "conda" -ErrorAction SilentlyContinue -ErrorVariable ProcessError | Split-Path
 if ($ProcessError) {
@@ -82,3 +84,4 @@ Else {
     $ShortCut.Save()
 }
 
+Stop-Transcript
