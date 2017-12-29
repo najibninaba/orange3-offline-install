@@ -50,7 +50,7 @@ def mkdir_support_dirs(rootdir, support_dirs=SUPPORT_DIRS):
 
 @click.command()
 @click.option('--rootdir', default="./", help='directory to hold the supporting files')
-def prepare(rootdir):
+def prepare(rootdir="./"):
     colorama.init()
     
     click.echo(colorama.Fore.LIGHTCYAN_EX + "Downloading Orange icon..")
