@@ -54,7 +54,7 @@ If ($IconFilePathExists -eq $False) {
 & "conda" config --set auto_update_conda false
 
 "Installing Orange3 with Orange3-Text and Orange3-TimeSeries addons"
-& "conda" install -y --channel ./Packages --override-channels --offline orange3 orange3-text orange3-timeseries
+& "conda" install -y --channel ./Packages --override-channels --offline --no-update-dependencies orange3 orange3-text orange3-timeseries
 
 $NLTK_DATA = "$env:APPDATA\Orange\nltk_data"
 $DirExists = Test-Path $NLTK_DATA
