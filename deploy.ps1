@@ -52,9 +52,14 @@ If ($IconFilePathExists -eq $False) {
 } 
 
 & "conda" config --set auto_update_conda false
+"Removing existing orange3 environment"
+& "conda" env remove -n orange3 -y
+
+"Creating a new orange3 environment"
+& "conda" create -n orange3 --clone root -y
 
 "Installing Orange3 with Orange3-Text and Orange3-TimeSeries addons"
-& "conda" install -y --channel ./Packages --override-channels --offline --no-update-dependencies orange3 orange3-text orange3-timeseries
+& "conda" install -n orange3 -y --channel ./Packages --override-channels --offline --no-update-dependencies orange3 orange3-text orange3-timeseries
 
 $NLTK_DATA = "$env:APPDATA\Orange\nltk_data"
 $DirExists = Test-Path $NLTK_DATA
@@ -67,21 +72,23 @@ Else {
 "Setting user environment variable NLTK_DATA.."
 [Environment]::SetEnvironmentVariable("NLTK_DATA", "$NLTK_DATA", "User")
 
+$Orange3Env = & "python" get-orange-env.py
 $Orange3ShortCut = $env:USERPROFILE + "\Desktop\Orange3.lnk"
-$FileExists = Test-Path $Orange3ShortCut
-If ($FileExists -eq $True) {
-    Write-Host "Orange3 Shortcut already exists.."
-} 
-Else {
-    "Creating Orange3 Shortcut"
-    $Shell = New-Object -ComObject ("WScript.Shell")
-    $ShortCut = $Shell.CreateShortcut($Orange3ShortCut)
-    $ShortCut.TargetPath="orange-canvas.exe"
-    $ShortCut.WorkingDirectory = $env:USERPROFILE + "\Desktop";
-    $ShortCut.WindowStyle = 1;
-    $ShortCut.IconLocation = $AnacondaShareDir + "\orange.ico";
-    $ShortCut.Description = "Orange3";
-    $ShortCut.Save()
-}
+
+$TargetPath = $AnacondaPath + "\python.exe"
+$TargetArguments = $AnacondaPath + "\cwp.py " + $Orange3Env + " " + $Orange3Env + "\python.exe -m Orange.canvas"
+
+
+"Creating Orange3 Shortcut"
+$Shell = New-Object -ComObject ("WScript.Shell")
+$ShortCut = $Shell.CreateShortcut($Orange3ShortCut)
+$ShortCut.TargetPath = $TargetPath;
+$ShortCut.Arguments = $TargetArguments;
+$ShortCut.WorkingDirectory = $env:USERPROFILE + "\Desktop";
+$ShortCut.WindowStyle = 1;
+$ShortCut.IconLocation = $AnacondaShareDir + "\orange.ico";
+$ShortCut.Description = "Orange3";
+$ShortCut.Save()
+
 
 Stop-Transcript
