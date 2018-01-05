@@ -73,7 +73,8 @@ Else {
 [Environment]::SetEnvironmentVariable("NLTK_DATA", "$NLTK_DATA", "User")
 
 $Orange3Env = & "python" get-orange-env.py
-$Orange3ShortCut = $env:USERPROFILE + "\Desktop\Orange3.lnk"
+# $Orange3ShortCut = $env:USERPROFILE + "\Desktop\Orange3.lnk"
+$Orange3ShortCut = "C:\Users\Public" + "\Desktop\Orange3.lnk"
 
 $TargetPath = $AnacondaPath + "\python.exe"
 $TargetArguments = $AnacondaPath + "\cwp.py " + $Orange3Env + " " + $Orange3Env + "\python.exe -m Orange.canvas"
