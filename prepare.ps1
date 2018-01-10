@@ -1,7 +1,11 @@
 Param (
     [string]$rootdir = ".\"
 )
-Start-Transcript -OutputDirectory "$pwd\logs"
+
+If ($PSVersionTable.PSVersion.Major -gt 2) {
+    Start-Transcript -OutputDirectory "$pwd\logs"
+}
+
 "Getting path of Anaconda3"
 Get-Command "conda" -ErrorAction SilentlyContinue -ErrorVariable ProcessError | Split-Path
 if ($ProcessError) {
@@ -22,4 +26,7 @@ Get-ChildItem -Path "$rootdir\Packages" -Recurse -Filter *repodata*
 
 
 Write-Host "All done. Now run the deploy.bat script to offline install Orange3 and its add-ons."
-Stop-Transcript
+
+If ($PSVersionTable.PSVersion.Major -gt 2) {
+    Stop-Transcript
+}

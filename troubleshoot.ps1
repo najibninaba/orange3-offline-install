@@ -1,4 +1,6 @@
-Start-Transcript -OutputDirectory "$pwd\logs"
+If ($PSVersionTable.PSVersion.Major -gt 2) {
+    Start-Transcript -OutputDirectory "$pwd\logs"
+}
 
 $CondaPath = Get-Command "conda" -ErrorAction SilentlyContinue -ErrorVariable ProcessError | Split-Path
 if ($ProcessError) {
@@ -73,4 +75,6 @@ $OrangeContribPath = $AnacondaPath + "\Lib\site-packages\orangecontrib"
 Get-ChildItem -Path $OrangeContribPath -Recurse
 "================================="
 
-Stop-Transcript
+If ($PSVersionTable.PSVersion.Major -gt 2) {
+    Stop-Transcript
+}
