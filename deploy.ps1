@@ -75,25 +75,6 @@ Else {
 "Setting user environment variable NLTK_DATA.."
 [Environment]::SetEnvironmentVariable("NLTK_DATA", "$NLTK_DATA", "User")
 
-$Orange3Env = & "python" get-orange-env.py
-$Orange3ShortCut = $env:USERPROFILE + "\Desktop\Orange3.lnk"
-# $Orange3ShortCut = "C:\Users\Public" + "\Desktop\Orange3.lnk"
-
-$TargetPath = $AnacondaPath + "\python.exe"
-$TargetArguments = $AnacondaPath + "\cwp.py " + "$Orange3Env" + " " + "$Orange3Env" + "\python.exe -m Orange.canvas"
-
-
-"Creating Orange3 Shortcut"
-$Shell = New-Object -ComObject ("WScript.Shell")
-$ShortCut = $Shell.CreateShortcut($Orange3ShortCut)
-$ShortCut.TargetPath = $TargetPath;
-$ShortCut.Arguments = $TargetArguments;
-$ShortCut.WorkingDirectory = $env:USERPROFILE + "\Desktop";
-$ShortCut.WindowStyle = 1;
-$ShortCut.IconLocation = $AnacondaShareDir + "\orange.ico";
-$ShortCut.Description = "Orange3";
-$ShortCut.Save()
-
 If ($PSVersionTable.PSVersion.Major -gt 2) {
     Stop-Transcript
 }
